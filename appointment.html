@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appointment | Life Care Hospital</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+
+<div class="logo">
+<i class="fa-solid fa-heart-pulse"></i>
+
+<div class="logo-text">
+<h2>Life Care</h2>
+<small>Compassion • Care • Commitment</small>
+</div>
+</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="doctors.html">Doctors</a></li>
+<li><a href="appointment.html" class="active">Appointment</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+<a href="appointment.html" class="btn">Book Now</a>
+
+</nav>
+</header>
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+<div class="page-content">
+
+<h1>Book an Appointment</h1>
+
+<p>
+Schedule your consultation with our experienced specialists.
+</p>
+
+</div>
+
+</section>
+
+<!-- SYMPTOM CHECKER -->
+
+<section class="symptom-checker">
+
+<h2>AI Symptom Checker</h2>
+
+<p>
+Select your symptom and find the recommended department.
+</p>
+
+<div class="form-group">
+
+<label>Select Symptom</label>
+
+<select id="symptom">
+
+<option value="">Choose Symptom</option>
+
+<option>Chest Pain</option>
+<option>Headache</option>
+<option>Bone Fracture</option>
+<option>Skin Allergy</option>
+<option>Fever</option>
+<option>Ear Pain</option>
+<option>Kidney Pain</option>
+<option>Cancer Symptoms</option>
+<option>Pregnancy Checkup</option>
+<option>Breathing Difficulty</option>
+
+</select>
+
+</div>
+
+<button type="button"
+class="btn"
+onclick="checkSymptoms()">
+
+Check Department
+
+</button>
+
+<div id="symptomResult"></div>
+
+<hr style="margin:30px 0;">
+
+<!-- BMI CALCULATOR -->
+
+<h3 style="margin-bottom:20px;">BMI Calculator</h3>
+
+<div class="form-group">
+<label>Weight (kg)</label>
+<input type="number" id="weight">
+</div>
+
+<div class="form-group">
+<label>Height (cm)</label>
+<input type="number" id="height">
+</div>
+
+<button type="button"
+class="btn"
+onclick="calculateBMI()">
+
+Calculate BMI
+
+</button>
+
+<div id="bmiResult" style="margin-top:20px;"></div>
+
+</section>
+
+<!-- APPOINTMENT FORM -->
+
+<section class="appointment-section">
+
+<div class="appointment-container">
+
+<h2>Appointment Request Form</h2>
+
+<form id="appointmentForm">
+
+<div class="form-group">
+<label>Full Name</label>
+<input type="text"
+id="name"
+placeholder="Enter your name"
+required>
+</div>
+
+<div class="form-group">
+<label>Email Address</label>
+<input type="email"
+id="email"
+placeholder="Enter your email"
+required>
+</div>
+
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel"
+id="phone"
+placeholder="Enter your phone number"
+required>
+</div>
+
+<div class="form-group">
+
+<label>Department</label>
+
+<select id="department" required>
+
+<option value="">Select Department</option>
+
+<option>Cardiology</option>
+<option>Neurology</option>
+<option>Orthopedics</option>
+<option>Pediatrics</option>
+<option>Dermatology</option>
+<option>Gynecology</option>
+<option>ENT</option>
+<option>General Medicine</option>
+<option>Radiology</option>
+<option>Emergency Medicine</option>
+<option>Oncology</option>
+<option>Nephrology</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Select Doctor</label>
+
+<select id="doctor" required>
+
+<option value="">Select Doctor</option>
+
+<option>Dr. Sarah Wilson - Cardiology</option>
+<option>Dr. David John - Neurology</option>
+<option>Dr. Michael Lee - Orthopedics</option>
+<option>Dr. Emily Thomas - Pediatrics</option>
+<option>Dr. Robert Martin - Dermatology</option>
+<option>Dr. Jennifer Clark - Gynecology</option>
+<option>Dr. James Walker - ENT</option>
+<option>Dr. Olivia Brown - General Medicine</option>
+<option>Dr. William Scott - Radiology</option>
+<option>Dr. Sophia Green - Emergency Medicine</option>
+<option>Dr. Daniel Carter - Oncology</option>
+<option>Dr. Rachel Adams - Nephrology</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+<label>Appointment Date</label>
+<input type="date"
+id="date"
+required>
+</div>
+
+<div class="form-group">
+
+<label>Available Time Slots</label>
+
+<select id="time" required>
+
+<option value="">Select Time Slot</option>
+
+<option>09:00 AM</option>
+<option>10:00 AM</option>
+<option>11:00 AM</option>
+<option>12:00 PM</option>
+<option>02:00 PM</option>
+<option>03:00 PM</option>
+<option>04:00 PM</option>
+<option>05:00 PM</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Additional Notes</label>
+
+<textarea rows="5"
+placeholder="Enter symptoms or notes">
+</textarea>
+
+</div>
+
+<button type="submit" class="btn">
+
+Book Appointment
+
+</button>
+
+</form>
+
+<!-- APPOINTMENT RESULT -->
+
+<div id="appointmentResult"
+class="appointment-result">
+
+<h3>Your Appointment Details</h3>
+
+<p>
+<strong>Appointment ID:</strong>
+LC<span id="appointmentId"></span>
+</p>
+
+<p>
+<strong>Name:</strong>
+<span id="resultName"></span>
+</p>
+
+<p>
+<strong>Doctor:</strong>
+<span id="resultDoctor"></span>
+</p>
+
+<p>
+<strong>Department:</strong>
+<span id="resultDepartment"></span>
+</p>
+
+<p>
+<strong>Date:</strong>
+<span id="resultDate"></span>
+</p>
+
+<p>
+<strong>Time:</strong>
+<span id="resultTime"></span>
+</p>
+
+<p class="status">
+Status: Confirmed
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- PATIENT PORTAL -->
+
+<hr style="margin:40px 0;">
+
+<section class="patient-portal">
+
+    <h2>Patient Portal</h2>
+
+    <p>
+        Enter your Appointment ID to view your appointment details.
+    </p>
+
+    <div class="form-group">
+        <label>Appointment ID</label>
+        <input type="text"
+               id="searchAppointmentId"
+               placeholder="Enter Appointment ID">
+    </div>
+
+    <button class="btn"
+            onclick="viewAppointment()">
+        View Appointment
+    </button>
+
+    <div id="patientResult"></div>
+
+</section>s
+<!-- WHY BOOK WITH US -->
+
+<section class="why-us">
+
+<h2 class="section-title">
+Why Book With Us?
+</h2>
+
+<div class="why-grid">
+
+<div class="why-card">
+<i class="fa-solid fa-user-doctor"></i>
+<h3>Expert Doctors</h3>
+<p>Consult experienced specialists.</p>
+</div>
+
+<div class="why-card">
+<i class="fa-solid fa-calendar-check"></i>
+<h3>Easy Scheduling</h3>
+<p>Convenient appointment booking.</p>
+</div>
+
+<div class="why-card">
+<i class="fa-solid fa-clock"></i>
+<h3>Minimal Waiting</h3>
+<p>Quick appointment processing.</p>
+</div>
+
+<div class="why-card">
+<i class="fa-solid fa-heart"></i>
+<h3>Patient Focused</h3>
+<p>Compassionate healthcare services.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-content">
+
+<h3>Life Care Hospital</h3>
+
+<p>Compassion. Care. Commitment.</p>
+
+<div class="socials">
+<i class="fab fa-facebook"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-linkedin"></i>
+</div>
+
+</div>
+
+<p class="copyright">
+© 2026 Life Care Hospital. All Rights Reserved.
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
