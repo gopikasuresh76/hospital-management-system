@@ -1,14 +1,15 @@
 # 🏥 Hospital Management System
 
-A web-based Hospital Management System developed as a web development project. 
-The project provides a simple and user-friendly interface for presenting hospital 
+A web-based Hospital Management System developed as a web development project.
+
+The project provides a simple and user-friendly interface for presenting hospital
 services, doctors, appointments, and contact information.
 
 ## 📌 Project Overview
 
-The Hospital Management System is designed to provide an organized online 
-interface for a hospital. It contains multiple web pages that allow users to 
-explore hospital information, available services, doctors, appointment details, 
+The Hospital Management System is designed to provide an organized online
+interface for a hospital. It contains multiple web pages that allow users to
+explore hospital information, available services, doctors, appointment details,
 and contact information.
 
 ## ✨ Features
